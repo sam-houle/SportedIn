@@ -4,8 +4,8 @@ session_start();
 if (isset($_POST['submit'])) {// If the submit button of the signup form has been clicked
 	include_once 'connexion_MySQLi.inc.php';
 
-	$courriel_conn = mysqli_real_escape_string($connexion,$_POST['courriel_conn']);
-	$motdepasse_conn = mysqli_real_escape_string($connexion,$_POST['motdepasse_conn']);
+	$courriel_conn = mysqli_real_escape_string($connexion,$_POST['compte']);
+	$motdepasse_conn = mysqli_real_escape_string($connexion,$_POST['connexion_motdepasse']);
 
 	//ERROR HANDLERS
 	//Check if inputs are empty

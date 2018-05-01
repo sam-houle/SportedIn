@@ -1,5 +1,5 @@
 <?php 
-
+header('Content-Type: text/html; charset=utf-8');
 if (isset($_POST['submit'])) {// If the submit button of the signup form has been clicked
 	include_once 'connexion_MySQLi.inc.php';
 
@@ -16,6 +16,11 @@ if (isset($_POST['submit'])) {// If the submit button of the signup form has bee
 	$naissance = mysqli_real_escape_string($connexion,$_POST['naissance']);
 	$codepostal = mysqli_real_escape_string($connexion,$_POST['codepostal']);
 	$profession = mysqli_real_escape_string($connexion,$_POST['profession']);
+	$ville = mysqli_real_escape_string($connexion,$_POST['ville']);
+	$province = mysqli_real_escape_string($connexion,$_POST['province']);
+	$pays = "Canada";
+	$longitude = 0.0;
+	$latitude = 0.0;
 	$texte = mysqli_real_escape_string($connexion,$_POST['texte']);
 
 	// ERROR HANDLERS
@@ -48,8 +53,8 @@ if (isset($_POST['submit'])) {// If the submit button of the signup form has bee
 		else{// Hashing the password
 			$hashedPwd = password_hash($motdepasse,PASSWORD_DEFAULT);
 			// Insert user into database
-			$sql_1 = "INSERT INTO membre (prenom,nom,email,type,statut,code_postal,naissance,profession,sexe,texte,photo)
-							VALUES ('$prenom','$nom','$courriel','$type','$statut','$codepostal','$naissance','$profession','$sexe','$texte','$photo');";
+			$sql_1 = "INSERT INTO membre (prenom,nom,email,type,statut,code_postal,ville,province,pays,longitude,latitude,naissance,profession,sexe,texte,photo)
+							VALUES ('$prenom','$nom','$courriel','$type','$statut','$codepostal','$ville','$province','$pays','$longitude','$latitude','$naissance','$profession','$sexe','$texte','$photo');";
 			mysqli_query($connexion,$sql_1);
 
 			$id_membre = mysqli_insert_id($connexion);
