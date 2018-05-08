@@ -57,6 +57,8 @@
 		$type='membre';
 		$statut=1;
 		$nomPhoto=$courriel;
+		$lat=$_POST['lat'];
+		$lng=$_POST['lng'];
 		try{
 			/*$requette3="SELECT * FROM membre WHERE email=?";
 			$modeleVerifieEmail = new modele($requette3,array($courriel));
@@ -64,8 +66,8 @@
 			$count = $stmt3->rowCount();*/
 			$unModele=new modele();
 			$photo=$unModele->verserFichier("PhotoMembre", "photo", "default.png",$nomPhoto);
-			$requete="INSERT INTO membre VALUES(0,?,?,?,?,?,?,?,?,?,0,0,?,?,?,?,?)";
-			$unModele=new modele($requete,array($prenom,$nom,$courriel,$type,$statut,$codepostal,$ville,$province,$pays,$naissance,$profession,$sexe,$texte,$photo));
+			$requete="INSERT INTO membre VALUES(0,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			$unModele=new modele($requete,array($prenom,$nom,$courriel,$type,$statut,$codepostal,$ville,$province,$pays,$lng,$lat,$naissance,$profession,$sexe,$texte,$photo));
 			$stmt=$unModele->executer();
 			$id_membre = $unModele->getId();
 			$requete2="INSERT INTO connexion values(?,?)";
