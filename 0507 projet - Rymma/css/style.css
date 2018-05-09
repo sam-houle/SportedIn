@@ -27,8 +27,13 @@
 	
 }
 
-#secRecherche {
+#secRecherche  {
 	padding:25px;
+	border-top: 5px solid #ffa726;
+	margin-top: -50px;
+}
+
+#secDescription{
 	border-top: 5px solid #ffa726;
 }
 
@@ -67,10 +72,43 @@
 	margin-left:10px;
 }
 
-#secRecherche {
-	margin-top: -50px;
+#divSportsProfil, #infoProfil{
+	height:200px;
+}
+
+#divSportsMonProfil, #divMesInfos{
+	height:250px;
+}
+
+#infoProfil{
+	width: 60%;
 }
 
 .age{
 	width:20px;
+}
+
+.bottom{
+	position: absolute;
+	bottom: 10%;
+}
+
+.listeSports li{
+	margin-top:5px;
+}
+
+#listeSportsAmi {
+	margin-top:-100px;
+}
+
+.ph5{
+	margin-left:10px;
+}
+
+#divAlert{
+	margin-top: 0px;
+}
+
+#monMSg{
+	margin-left: 35%;
 }

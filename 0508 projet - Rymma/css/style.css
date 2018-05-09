@@ -1,0 +1,114 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.recherche{
+	width:24px;
+}
+
+/*#banniere{
+	background-image: url("../images/banniere.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}*/
+
+.recherche:hover {
+	
+}
+
+#secRecherche  {
+	padding:25px;
+	border-top: 5px solid #ffa726;
+	margin-top: -50px;
+}
+
+#secDescription{
+	border-top: 5px solid #ffa726;
+}
+
+#navProfil {
+	border-top: 5px solid #ffa726;
+	margin-top: 2px;
+}
+
+#membrenav ul{
+	text-align:center;
+}
+
+#membrenav ul li{
+	padding: 0px 20px 0px 20px;
+}
+
+#membrenav ul li:active{
+	color: #ff9800;
+}
+
+#membrenav ul li:hover{
+	color: #ff9800;
+}
+
+#membrenav {
+	height:55px;
+	border-bottom: 3px solid #ff9800;
+}
+
+#infoCompte {
+	border-top: 5px solid #ffa726;
+}
+
+.sugg{
+	margin-top:0px;
+	margin-left:10px;
+}
+
+#divSportsProfil, #infoProfil{
+	height:200px;
+}
+
+#divSportsMonProfil, #divMesInfos{
+	height:250px;
+}
+
+#infoProfil{
+	width: 60%;
+}
+
+.age{
+	width:20px;
+}
+
+.bottom{
+	position: absolute;
+	bottom: 10%;
+}
+
+.listeSports li{
+	margin-top:5px;
+}
+
+#listeSportsAmi {
+	margin-top:-100px;
+}
+
+.ph5{
+	margin-left:10px;
+}
+
+#divAlert{
+	margin-top: 0px;
+}
+
+#monMSg{
+	margin-left: 35%;
+}
