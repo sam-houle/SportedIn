@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  Dim 13 mai 2018 à 19:54
+-- Généré le :  lun. 14 mai 2018 à 22:58
 -- Version du serveur :  5.7.17
 -- Version de PHP :  7.1.3
 
@@ -40,15 +40,16 @@ CREATE TABLE `connexion` (
 --
 
 INSERT INTO `connexion` (`id_membre`, `mot_de_passe`) VALUES
-(1, '$2y$10$BP7q2GHMV9HfGeSBBintkOD.mzu6HqGf7mpGJnhYzV5nQlShfHunG'),
-(2, '$2y$10$r196c9rJwa/QfAtmGEPe5eCLSrW7m7rsiFrJe6xVCUMDQtNAyVCHa'),
-(3, '$2y$10$euq7luRKKZiG3YSg02FjKeyJLGlFVORb9T.QJJ6wS.dXlIlu.JBIe'),
-(4, '$2y$10$aD7270i9GXDA47bAxgAD8O6y.iWPl/5fJHo4brGo81o7/AQBOQCyK'),
-(5, '$2y$10$QOTvOTTrv1wUX95sNVOR1.EfrE9LlANIEJ1SED6BSR.wgcKAz8v1q'),
-(6, '$2y$10$HI7zHOzJrjGlUzVY5cCmsun4vgmDA1W5k.jA3DXsLq3Qw1cU8zPda'),
-(7, '$2y$10$KLsXI2oVfvJzFgQtLqbureScKHUNtg403EoxdOFhZMCT7BrS3Ft7m'),
-(8, '$2y$10$D.wBTTRfRc7HVJx6sUamF.Fb2ogjFOJ9JVUDnJEcwPFSBOprAhUCG'),
-(9, '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+(1, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(2, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(3, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(4, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(5, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(6, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(7, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(8, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(9, '1bfbdf35b1359fc6b6f93893874cf23a50293de5'),
+(10, '1bfbdf35b1359fc6b6f93893874cf23a50293de5');
 
 -- --------------------------------------------------------
 
@@ -107,11 +108,13 @@ CREATE TABLE `membre` (
   `statut` int(1) NOT NULL,
   `code_postal` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `ville` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `quartier` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
   `province` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `pays` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Canada',
   `longitude` decimal(8,6) NOT NULL,
   `latitude` decimal(8,6) NOT NULL,
   `naissance` date NOT NULL,
+  `age` int(3) NOT NULL,
   `profession` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `sexe` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `texte` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
@@ -122,16 +125,17 @@ CREATE TABLE `membre` (
 -- Déchargement des données de la table `membre`
 --
 
-INSERT INTO `membre` (`id_membre`, `prenom`, `nom`, `email`, `type`, `statut`, `code_postal`, `ville`, `province`, `pays`, `longitude`, `latitude`, `naissance`, `profession`, `sexe`, `texte`, `photo`) VALUES
-(1, 'Sam', 'Houle', 'ld.samuel.houle@gmail.com', 'membre', 1, 'j7g 2t8', 'boisbriand', 'QC', 'Canada', '0.000000', '0.000000', '1997-04-03', 'Administration', 'Homme', '1', ''),
-(2, 'George', 'Francois', 'g@g.com', 'membre', 1, 'H4X 1Y8', 'Montreal', 'QC', 'Canada', '0.000000', '0.000000', '1987-05-15', 'Administration', 'Homme', '1', ''),
-(3, 'Mathieu', 'Brosseau', 'm@b.com', 'membre', 1, 'H1N 1J4', 'Montreal', 'QC', 'Canada', '0.000000', '0.000000', '1992-04-11', 'Administration', 'Homme', '1', ''),
-(4, 'Milene', 'Tremblay', 'm@t.com', 'membre', 1, ' H4E 3H4', 'Montreal', 'QC', 'Canada', '0.000000', '0.000000', '2000-05-07', 'Administration', 'Femme', '1', ''),
-(5, 'Matt', 'Damon', 'm@d.com', 'membre', 1, 'H8N 3A4', 'Montreal', 'QC', 'Canada', '0.000000', '0.000000', '1999-05-01', 'Administration', 'Homme', '1', ''),
-(6, 'Mitsu', 'Gelina', 'm@g.com', 'membre', 1, 'H7T 1E4', 'Laval', 'QC', 'Canada', '0.000000', '0.000000', '1982-05-01', 'Administration', 'Femme', '1', ''),
-(7, 'Jerome', 'Pingouin', 'j@p.com', 'membre', 1, 'H7T 1R3', 'Laval', 'QC', 'Canada', '0.000000', '0.000000', '1985-03-07', 'Gestion', 'Homme', '1', ''),
-(8, 'Camille', 'Gismon', 'c@g.com', 'membre', 1, 'J7G 3K5', 'boisbriand', 'QC', 'Canada', '0.000000', '0.000000', '1994-04-11', 'Hebergement', 'Femme', '1', ''),
-(9, 'Rym', 'Lou', 'r@l.com', 'membre', 1, 'h2c2a1', 'Ahuntsic-Cartierville', 'QC', 'Canada', '-73.651588', '45.558133', '1987-03-31', 'Droit', 'Femme', 'allo je mappele rym', '63d01424f347d69167f5f1ea94bd8d2b663eb514.png');
+INSERT INTO `membre` (`id_membre`, `prenom`, `nom`, `email`, `type`, `statut`, `code_postal`, `ville`, `quartier`, `province`, `pays`, `longitude`, `latitude`, `naissance`, `age`, `profession`, `sexe`, `texte`, `photo`) VALUES
+(1, 'Samuel', 'houle', 'ld.samuel.houle@gmail.com', 'membre', 1, 'j7g2t8', 'Boisbriand', '', 'QC', 'Canada', '-73.817813', '45.610763', '1997-04-03', 21, 'Administration', 'Femme', 'Hey', '06422d95c6f9d8293d372409fd352638ac813a7f.jpg'),
+(2, 'Matt', 'damon', 'matdamon@hotmail.com', 'membre', 1, 'H4X1Y8', 'Montreal-Ouest', '', 'QC', 'Canada', '-73.645505', '45.453078', '1977-12-12', 40, 'Autre', 'Homme', 'Im Matt Damon', '3b01b0bc05ae8369f08236e3c470647f48c984be.jpg'),
+(3, 'Gen', 'houle', 'G@h.com', 'membre', 1, 'j7g2t8', 'Boisbriand', '', 'QC', 'Canada', '-73.817813', '45.610763', '1992-12-02', 25, 'Droit', 'Femme', '1', 'default.png'),
+(4, 'jerome', 'george', 'jerome@g.com', 'membre', 1, 'H8N3A4', 'Montreal', 'LaSalle', 'QC', 'Canada', '-73.615974', '45.447005', '1980-04-12', 38, 'Sante', 'Homme', '1', 'default.png'),
+(5, 'Math', 'Gerv', 'Ma@g.com', 'membre', 1, 'H8N3A4', 'Montreal', 'LaSalle', 'QC', 'Canada', '-73.615974', '45.447005', '1992-12-14', 25, 'Administration', 'Femme', '1', 'default.png'),
+(6, 'maxime', 'cava', 'max@c.com', 'membre', 1, 'H7P5P5', 'Laval', '', 'QC', 'Canada', '-73.800989', '45.565635', '1979-03-03', 39, 'Droit', 'Homme', '1', 'default.png'),
+(7, 'milene', 'tremblay', 'mil@t.com', 'membre', 1, 'H7P5P5', 'Laval', '', 'QC', 'Canada', '-73.800989', '45.565635', '1995-12-15', 22, 'Sante', 'Femme', '1', 'default.png'),
+(8, 'Justine', 'Monique', 'ju@mon.c', 'membre', 1, 'H1P2N9', 'Montreal', 'Saint Leonard', 'QC', 'Canada', '-73.591931', '45.590098', '1969-03-15', 49, 'Droit', 'Femme', 'hwe', 'default.png'),
+(9, 'Marguerite', 'poistra', 'marg@poit.com', 'membre', 1, 'H4X1Y8', 'Montreal-Ouest', '', 'QC', 'Canada', '-73.645505', '45.453078', '1956-12-12', 61, 'Sante', 'Autre', '123', 'default.png'),
+(10, 'anthony', 'picard', 'ant@pic.copm', 'membre', 1, 'H1P2N7', 'Montreal', 'Saint Leonard', 'QC', 'Canada', '-73.588563', '45.588693', '1987-04-25', 31, 'Gestion', 'Homme', '1', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -179,6 +183,33 @@ CREATE TABLE `niveau_sport` (
   `id_sport` int(4) NOT NULL,
   `niveau` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `niveau_sport`
+--
+
+INSERT INTO `niveau_sport` (`id_membre`, `id_sport`, `niveau`) VALUES
+(10, 1, 1),
+(7, 1, 2),
+(1, 1, 1),
+(2, 3, 2),
+(3, 6, 2),
+(4, 1, 3),
+(5, 1, 1),
+(6, 2, 1),
+(6, 3, 1),
+(7, 4, 1),
+(7, 1, 1),
+(8, 1, 1),
+(8, 3, 1),
+(8, 4, 2),
+(9, 1, 2),
+(9, 4, 2),
+(9, 1, 1),
+(1, 2, 1),
+(1, 3, 1),
+(1, 4, 1),
+(3, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -343,7 +374,7 @@ ALTER TABLE `evenement`
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id_membre` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_membre` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
