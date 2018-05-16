@@ -21,18 +21,20 @@
 	  <script language="javascript" src="acceuil/acceuilControleurVue.js"></script>
   	  <script language="javascript" src="Recherche/rechercheRequetes.js"></script>
 	  <script language="javascript" src="Recherche/rechercheControleurVue.js"></script>
-	    <script language="javascript" src="messagerie/messagerieControleurVue.js"></script>
-		<script language="javascript" src="messagerie/messagerieRequetes.js"></script>
+	  <script language="javascript" src="messagerie/messagerieControleurVue.js"></script>
+	  <script language="javascript" src="messagerie/messagerieRequetes.js"></script>
+	  <script language="javascript" src="evenement/evenementControleurVue.js"></script>
+	  <script language="javascript" src="evenement/evenementRequetes.js"></script>
       <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
       <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 </head>
 <body> 
 <div id="nav">
-  <nav class="green" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Sported In</a>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo green-text">Sported In</a>
 	  <ul class="right hide-on-med-and-down">
 	  	<li>
-			<a class='btn waves-effect waves-light cyan waves-effect' onClick="rendreVisible('divConnexion')">Connexion</a>
+			<a class='btn waves-effect waves-light green waves-effect' onClick="rendreVisible('divConnexion')">Connexion</a>
 		</li>
 		<li>
 			<!--<form>
@@ -44,13 +46,14 @@
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Connexion</a></li>
+		<li><a href="#">S'inscire</a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons green-text">menu</i></a>
     </div>
   </nav>
 </div>
-  <div class="card-panel orange" id="divAlert"></div>  
+  <div class="card-panel orange" id="divAlert" style="display:none"></div>  
   <div id="content">
     <div class="container" id="banniere">
 	<br>
@@ -59,7 +62,7 @@
         <h5 class="header col s12 light">Rencontrez des gens qui partagent les mêmes carrières et sports que vous</h5>
       </div>
       <div class="row center">
-        <a class="btn-large waves-effect waves-light orange" onClick="rendreVisible('divInscription'); rendreInvisible('divConnexion');">S'inscrire</a>
+        <a class="btn-large waves-effect waves-light green" onClick="rendreVisible('divInscription'); rendreInvisible('divConnexion');">S'inscrire</a>
       </div>
       <br><br>
 	</div>	
@@ -82,11 +85,11 @@
 							</div>
 							<div class="input-field col s5">
 								<i class="material-icons prefix">lockoutline</i>
-								<input id="connexion_motdepasse" name="connexion_motdepasse" type="text" class="validate">
+								<input id="connexion_motdepasse" name="connexion_motdepasse" type="password" class="validate">
 								<label for="icon_password">Mot de passe</label> 
 							</div>
 							<div class="input-field col s2">
-							  <button class="btn cyan waves-effect waves-light right" onClick="connexionMembre();" type="button" name="connexion">Connexion
+							  <button class="btn green waves-effect waves-light right" onClick="connexionMembre();" type="button" name="connexion">Connexion
 								<i class="mdi-content-send right"></i>
 							  </button>
 							</div>
@@ -97,6 +100,7 @@
 		  </div>
 		</div>
 	</div>
+	
 	<div class="container">
 		<div class="row">
 		<div class="col s12 m12 l12" style="display:none" id="divInscription">
@@ -165,7 +169,7 @@
 						  <option value="Hebergement">Hébergement, restauration et services alimentaires </option>
 						  <option value="Informatique">Informatique, génie et autres sciences naturelles et appliquées</option>
 						  <option value="Sante">Santé</option>
-						  <option value= "Autre">Autre</option>
+						  <option value="Autre">Autre</option>
 					   </select>
 					</div>     
 					<div class="col s3">
@@ -239,10 +243,36 @@
    <div class="container"> 
 	  <div class="row">
             <div class="col s12 m12 l12">
-              <div class="card-panel green" id="secRecherche"> 
-				<div id="rechercheSimple">
+            
+			  
+				<div class="row card-panel" id="secRecherche">
+			    
+				<div class="row center-align">
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/hiking.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/canoe.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/badminton.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/baseball.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/basketball.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/boxing.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/fishing.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/racing.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/dancer.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/climbing.png" class="recherche"></i></a>
 				</div>
-				<div class="row card-panel" >
+				<div class="row center-align">
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/golf.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/dumbbell.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/running.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/hockey.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/kimono.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/pingpong.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/tennis.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/soccer.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/bicycle.png" class="recherche"></i></a>
+					<a class="btn-floating waves-effect waves-light green darker-2"><i class="material-icons"><img src="images/sports/volleyball.png" class="recherche"></i></a>
+				</div>
+				<br><hr>
+				<h4>Recherche</h4><br>
 				<div class="row">
 					<div class="col s6">					
 						<label>Sport</label>             
@@ -306,11 +336,11 @@
 						</select>
 					</div> 
 					<div class="input-field col s6">
-                          <button class="btn orange waves-effect waves-light right" type="submit" name="action">Rechercher
+                          <button class="btn green waves-effect waves-light right" type="submit" name="action">Rechercher
                             <i class="mdi-content-send right"></i>
                           </button>
                       </div>
-				</div>
+			
 			  </div>
 		  </div>
 		 </div>
@@ -320,10 +350,10 @@
 			<div class="col s12 m3">
 			  <div class="card">
 				<div class="card-image">
-				  <img src="http://www.mstrafo.de/fileadmin/_processed_/b/1/csm_person-placeholder-male_5602d73d5e.png">
-				  <span class="card-title">Card Title</span>
+				  <img src="images/profil1.jpg">
 				</div>
 				<div class="card-content">
+				<span class="card-title">Anna Jean</span>
 				  <p>I am a very simple card. I am good at containing small bits of information.
 				  I am convenient because I require little markup to use effectively.</p>
 				</div>
@@ -333,10 +363,11 @@
 			<div class="col s12 m3">
 			  <div class="card">
 				<div class="card-image">
-				  <img src="http://www.mstrafo.de/fileadmin/_processed_/b/1/csm_person-placeholder-male_5602d73d5e.png">
-				  <span class="card-title">Card Title</span>
+				  <img src="images/profil2.jpg">
+				  
 				</div>
 				<div class="card-content">
+				<span class="card-title">Amine Rais</span>
 				  <p>I am a very simple card. I am good at containing small bits of information.
 				  I am convenient because I require little markup to use effectively.</p>
 				</div>
@@ -346,10 +377,10 @@
 			<div class="col s12 m3">
 			  <div class="card">
 				<div class="card-image">
-				  <img src="http://www.mstrafo.de/fileadmin/_processed_/b/1/csm_person-placeholder-male_5602d73d5e.png">
-				  <span class="card-title">Card Title</span>
+				  <img src="images/profil3.jpg">				  
 				</div>
 				<div class="card-content">
+				<span class="card-title">Ellen Page</span>
 				  <p>I am a very simple card. I am good at containing small bits of information.
 				  I am convenient because I require little markup to use effectively.</p>
 				</div>
@@ -359,10 +390,10 @@
 			<div class="col s12 m3">
 			  <div class="card">
 				<div class="card-image">
-				  <img src="http://www.mstrafo.de/fileadmin/_processed_/b/1/csm_person-placeholder-male_5602d73d5e.png">
-				  <span class="card-title">Card Title</span>
+				  <img src="images/profil4.jpg">
 				</div>
 				<div class="card-content">
+				  <span class="card-title">Kevin Blais</span>
 				  <p>I am a very simple card. I am good at containing small bits of information.
 				  I am convenient because I require little markup to use effectively.</p>
 				</div>
@@ -372,7 +403,7 @@
 	</div>
 	</div>
 
-  <footer class="page-footer green">
+  <footer class="page-footer green darken-2">
     
     <div class="footer-copyright">
       <div class="container">

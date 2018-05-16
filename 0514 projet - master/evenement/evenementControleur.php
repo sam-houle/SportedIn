@@ -3,24 +3,26 @@
 	session_start();
 	$tabRes=array();
 	
-	function afficherMsg(){
+	function afficherEvent(){
 		global $tabRes;
 		$user=$_SESSION['u_id'];
 		try{
-			$requette = "SELECT membre_deux, prenom, nom, MAX(stamp) temps FROM conversation, membre, message where membre_deux=id_membre and membre_un=? and message.id_convo=conversation.id_convo group by prenom, nom";
-			$unModele=new modele($requette,array($user));
+			$requette = "SELECT * FROM evenement e, sport s,membre WHERE e.id_sport=s.id_sport AND ((id_destinateur=id_membre AND id_destinateur!=?) OR (id_destinataire=id_membre AND id_destinataire!=?)) AND (id_destinateur=? OR id_destinataire=?) ORDER BY date_ev";
+			$unModele=new modele($requette,array($user,$user,$user,$user));
 			$stmt=$unModele->executer();
+			$tabRes['listeEvent']=array();
 			while($ligne=$stmt->fetch(PDO::FETCH_OBJ)){
-				$tabRes['listeMsg'][]=$ligne;
+				$tabRes['listeEvent'][]=$ligne;
 			}
 		}catch(Exception $e){
+			echo $e;
 		}finally{
-			$tabRes['action']="afficherMsg";
+			$tabRes['action']="afficherEvent";
 			unset($unModele);
 		}
 	}
 	
-	function afficherMsgAmi($destinataire){
+	/*function afficherMsgAmi($destinataire){
 		global $tabRes;
 		$user=$_SESSION['u_id'];
 		try{
@@ -59,7 +61,7 @@
 		}finally{
 			unset($unModele);
 		}
-	}
+	}*/
 	
 	//******************************************************
 	//Contrôleur
@@ -72,8 +74,8 @@
 	}
 	
 	switch($action){
-		case "afficherMsg" :
-			afficherMsg();
+		case "afficherEvent" :
+			afficherEvent();
 		break;
 		case "afficherMsgAmi" :
 			afficherMsgAmi($destinataire);
