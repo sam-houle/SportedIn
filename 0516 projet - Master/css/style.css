@@ -1,0 +1,48 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.recherche{
+	width:24px;
+}
+
+#banniere{
+	background-image: url("images/banniere.jpg");
+	background-repeat: no repeat;
+}
+
+#navProfil {
+	border-top: 5px solid #ffa726;
+	margin-top: 2px;
+}
+
+#membrenav ul{
+	text-align:center;
+}
+
+#membrenav ul li{
+	padding: 0px 20px 0px 20px;
+}
+
+#membrenav ul li:active{
+	color: #ff9800;
+}
+
+#membrenav ul li:hover{
+	color: #ff9800;
+}
+
+#membrenav {
+	height:55px;
+}
