@@ -76,7 +76,7 @@
 			$tabRes['action']="inscript";
 			$tabRes['msg']="membre bien enregistre";
 			chercheUserCreated($courriel);
-			$tabRes['id_membre']=$_SESSION['u_id'];
+			$tabRes['id_membre']=$_SESSION['u_id'];//$id_membre = $_SESSION['u_id'];
 			$tabRes['u_prenom']=$_SESSION['u_prenom'];
 			$tabRes['u_nom']=$_SESSION['u_nom'];
 			$tabRes['u_ville']=$_SESSION['u_ville'];

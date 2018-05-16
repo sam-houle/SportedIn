@@ -22,15 +22,6 @@
 	background-repeat: no repeat;
 }
 
-.recherche:hover {
-	
-}
-
-#secRecherche {
-	padding:25px;
-	border-top: 5px solid #ffa726;
-}
-
 #navProfil {
 	border-top: 5px solid #ffa726;
 	margin-top: 2px;
@@ -48,12 +39,10 @@
 	color: #ff9800;
 }
 
-
 #membrenav ul li:hover{
 	color: #ff9800;
 }
 
 #membrenav {
 	height:55px;
-	border-bottom: 3px solid #ff9800;
 }
